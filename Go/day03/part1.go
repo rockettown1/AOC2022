@@ -2,18 +2,16 @@ package main
 
 import (
 	"adventofcode/packages/utils"
-	"fmt"
 	"strings"
 )
 
 func part1() int {
-	fmt.Println("Part 1")
-	contentSlice := utils.GetPuzzleInput("day03")
+	content := utils.GetPuzzleInput("day03")
 
 	alphabet := utils.CreateAlphabet()
 	p := 0
 
-	for _, v := range contentSlice {
+	for _, v := range content {
 		c1 := v[0 : len(v)/2]
 		c2 := v[len(v)/2:]
 		common := make([]string, 0)
