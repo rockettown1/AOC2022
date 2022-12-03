@@ -14,3 +14,5 @@ export default function part1(input: string) {
 
   return sortedTotals[0];
 }
+
+part1(input);
