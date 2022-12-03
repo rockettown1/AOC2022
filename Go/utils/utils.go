@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 )
 
 func GetPuzzleInput(d string) []string {
@@ -49,4 +50,17 @@ func Contains(elems []string, v string) bool {
 		}
 	}
 	return false
+}
+
+func CreateAlphabet() []string {
+	alphabet := make([]string, 0)
+
+	for i := 97; i < 26+97; i++ {
+		alphabet = append(alphabet, string(i))
+	}
+	for i := 0; i < 26; i++ {
+		alphabet = append(alphabet, strings.ToUpper(alphabet[i]))
+	}
+
+	return alphabet
 }
