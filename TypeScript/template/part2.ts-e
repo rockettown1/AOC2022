@@ -1,0 +1,4 @@
+import { getPuzzleInput } from "../utils";
+const input = getPuzzleInput("dayX");
+
+export default function part2(input: string) {}
