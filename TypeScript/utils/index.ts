@@ -7,3 +7,14 @@ export function getPuzzleInput(day: string) {
     "utf-8"
   );
 }
+
+export function createAlphabet(): string[] {
+  let letters: string[] = [];
+  for (let i = 97; i < 26 + 97; i++) {
+    letters.push(String.fromCharCode(i));
+  }
+  for (let i = 0; i < 26; i++) {
+    letters.push(letters[i].toUpperCase());
+  }
+  return letters;
+}
