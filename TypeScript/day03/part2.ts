@@ -5,7 +5,7 @@ export default function part2(input: string) {
   const arr = input.split("\n");
   const letters = createAlphabet();
   let groups: string[][] = [];
-  const priorities: any[] = [];
+  let priorities = 0;
 
   while (arr.length > 0) {
     groups = [...groups, arr.splice(0, 3)];
@@ -15,13 +15,11 @@ export default function part2(input: string) {
     const common = new Set<string>();
     const [r1, r2, r3] = group;
 
-    r1.split("").forEach((v) => r2.indexOf(v) !== -1 && common.add(v));
-    common.forEach((v) => r3.indexOf(v) !== -1 && priorities.push(v));
+    r1.split("").forEach((v) => r2.includes(v) && common.add(v));
+    common.forEach((v) => {
+      if (r3.includes(v)) priorities += letters.indexOf(v) + 1;
+    });
   });
 
-  return priorities
-    .map((letter) => letters.join("").indexOf(letter) + 1)
-    .reduce((total, curr) => total + curr);
+  return priorities;
 }
-
-console.log(part2(input));
