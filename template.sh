@@ -8,9 +8,6 @@ do
     esac
 done
 
-echo "$language"
-echo "$day"
-
 cd "$language"
 mkdir -p day"$day"
 cp -r ./template/. day"$day"
