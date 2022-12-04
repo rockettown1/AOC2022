@@ -6,6 +6,11 @@ import (
 	"strings"
 )
 
+/*
+This is a working solution but I have no idea if it's idomatic Go code.
+I expect to come back to this after getting more experience with Go.
+*/
+
 func part2() int {
 	content := utils.GetPuzzleInput("day04")
 	lines := make([][][]int, 0)
