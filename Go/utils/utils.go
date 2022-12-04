@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -50,6 +51,16 @@ func Contains(elems []string, v string) bool {
 		}
 	}
 	return false
+}
+
+func ToInts(arr []string) []int {
+	nums := make([]int, 0)
+	for _, a := range arr {
+		num, err := strconv.Atoi(a)
+		Check(err)
+		nums = append(nums, num)
+	}
+	return nums
 }
 
 func CreateAlphabet() []string {
