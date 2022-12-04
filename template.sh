@@ -13,7 +13,7 @@ blue='\033[0;34m'
 cd "$language"
 mkdir -p day"$day"
 cp -r ./template/. day"$day"
-echo "${green}Create solution directory for day$day in $language"
+echo "${green}Created solution directory for day$day in $language"
 
 cd ../_inputs
 touch day"$day".txt
