@@ -8,7 +8,7 @@ const testInput = `2-4,6-8
 6-6,4-6
 2-6,4-8`;
 
-describe("day$day", () => {
+describe("day04", () => {
   describe("Part 1", () => {
     it("should return 2", () => {
       expect(part1(testInput)).toEqual(2);
