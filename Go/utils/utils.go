@@ -9,7 +9,7 @@ import (
 )
 
 func GetPuzzleInput(d string) []string {
-	content := ReadLines(fmt.Sprintf("../%v/puzzleInput.txt", d))
+	content := ReadLines(fmt.Sprintf("../../_inputs/%v.txt", d))
 
 	return content
 }

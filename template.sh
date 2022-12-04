@@ -11,3 +11,6 @@ done
 cd "$language"
 mkdir -p day"$day"
 cp -r ./template/. day"$day"
+
+cd ../_inputs
+touch day"$day".txt
