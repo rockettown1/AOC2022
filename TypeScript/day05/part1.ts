@@ -17,8 +17,10 @@ export default function part1(input: string) {
 
   for (const run of instructions) {
     const [num, from, to] = run;
-    for (let i = 0; i < num; i++) {
+    let i = 0;
+    while (i < num) {
       stacks[to].push(stacks[from].pop()!);
+      i++;
     }
   }
 
