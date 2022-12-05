@@ -10,9 +10,11 @@ export default function part1(input: string) {
   let fullCount = 0;
 
   for (let pair of pairs) {
-    const [a1, a2, b1, b2] = [pair[0][0], pair[0][1], pair[1][0], pair[1][1]];
+    const [first, second] = pair;
+    const firstContainsSecond = first[0] <= second[0] && first[1] >= second[1];
+    const secondContainsFirst = second[0] <= first[0] && second[1] >= first[1];
 
-    if ((a1 <= b1 && a2 >= b2) || (b1 <= a1 && b2 >= a2)) {
+    if (firstContainsSecond || secondContainsFirst) {
       fullCount++;
     }
   }
