@@ -1,9 +1,9 @@
-import { transposeToMap } from ".";
+import { transposeAndMap } from ".";
 import { getPuzzleInput } from "../utils";
 const input = getPuzzleInput("day05");
 
 export default function part2(input: string) {
-  const stacks = transposeToMap(
+  const stacks = transposeAndMap(
     input.slice(0, input.indexOf("move")).trimEnd()
   );
 

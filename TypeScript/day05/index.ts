@@ -27,11 +27,11 @@ Turns this:
 
 */
 
-export function transposeToMap(input: string): { [k: number]: string[] } {
+export function transposeAndMap(input: string): { [k: number]: string[] } {
   let arr = input.split("\n");
   let j = arr
     .slice(0, arr.length - 1)
-    .map((str) => str.match(/(\w|\s{3})\s?/gm)!.map((str) => str.trim()));
+    .map((str) => str.match(/(\w|\s{3})\s?/g)!.map((str) => str.trim()));
   //transpose array
   let output = j[0].map((_, colIndex) => j.map((row) => row[colIndex]));
 
