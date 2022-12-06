@@ -1,10 +1,12 @@
 package main
 
 import (
+	"adventofcode/packages/utils"
 	"fmt"
 )
 
-func part2() string {
+func part2() []string {
 	fmt.Println("Part 2")
-	return ""
+	content := utils.GetPuzzleInput("dayX")
+	return content
 }
