@@ -1,7 +1,7 @@
 import { getPuzzleInput } from "../utils";
 const input = getPuzzleInput("day06");
 
-export default function part2(input: string) {
+export default function part1(input: string) {
   let windowSize = 4;
   let i = 0;
   let j = i + windowSize;
