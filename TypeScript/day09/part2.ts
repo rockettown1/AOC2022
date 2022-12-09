@@ -58,8 +58,6 @@ export default function part2(input: string) {
   return visitedPoints.size;
 }
 
-console.log(part2(input));
-
 function move(
   direction: string,
   point: Point,

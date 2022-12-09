@@ -43,14 +43,11 @@ export default function part2(input: string) {
       newHead = move(line.direction, head, rules);
       newTail = trailHead(newHead, newTail);
       hasVisited(newTail.x, newTail.y, visitedPoints);
-      console.log(newTail);
     }
   }
 
   return visitedPoints.size;
 }
-
-part2(testInput);
 
 function move(
   direction: string,
