@@ -4,7 +4,7 @@
   "description": "Advent of Code 2022",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch --verbose"
   },
   "author": "Dan Krishnan",
   "license": "ISC",
