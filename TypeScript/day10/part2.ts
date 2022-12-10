@@ -14,10 +14,9 @@ export default async function part2(input: string) {
 
   let X = 1;
   let cycles = 0;
-  let signalStrength = [];
   let cycleCheck = 20;
-
   let crtCol = 0;
+
   for (const c of commands) {
     let cycleCount = c.command === `addx` ? 2 : 1;
 
@@ -31,7 +30,6 @@ export default async function part2(input: string) {
       cycles++;
 
       if (cycles === cycleCheck) {
-        signalStrength.push(cycles * X);
         cycleCheck += 40;
       }
 
