@@ -1,7 +1,8 @@
 import { getPuzzleInput } from "../utils";
 const input = getPuzzleInput("day07");
 
-/* Disclaimer: This is a refactored solution after submitting and looking at othe (better) solutions. Mainly stuff to do with regex magic which I don't really understand 🤷‍♂️ */
+/* Disclaimer: This is a refactored solution after submitting and looking at other (better) solutions.
+ Mainly stuff to do with regex magic which I don't really understand 🤷‍♂️ */
 
 type Node = {
   name: string;
