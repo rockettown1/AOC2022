@@ -10,7 +10,7 @@ export default function part1(input: string) {
 
   let X = 1;
   let cycles = 0;
-  let signalStrength = [];
+  let signalStrength = 0;
   let cycleCheck = 20;
 
   for (const c of commands) {
@@ -19,7 +19,7 @@ export default function part1(input: string) {
       cycles++;
 
       if (cycles === cycleCheck) {
-        signalStrength.push(cycles * X);
+        signalStrength += cycles * X;
         cycleCheck += 40;
       }
 
@@ -29,5 +29,5 @@ export default function part1(input: string) {
     }
   }
 
-  return signalStrength.reduce((total, current) => total + current, 0);
+  return signalStrength;
 }
