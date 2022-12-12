@@ -97,23 +97,23 @@ export function monkeyFactory(input: string) {
     .map((line) => line.split(":").map((part) => part.trim()));
 
   for (let i = 1; i < lines.length; i++) {
-    if (lines[i][0] === "Starting items") {
-      monkey.setQueue(lines[i][1].split(",").map((item) => parseInt(item)));
-    }
-
-    if (lines[i][0] === "Operation") {
-      monkey.setOperands(lines[i][1].split(" = ")[1]);
-    }
-
-    if (lines[i][0] === "Test") {
-      monkey.setDivider(parseInt(lines[i][1].split(" ")[2]));
-    }
-
-    if (lines[i][0] === "If true") {
-      monkey.setOptions({ true: parseInt(lines[i][1].split(" ")[3]) });
-    }
-    if (lines[i][0] === "If false") {
-      monkey.setOptions({ false: parseInt(lines[i][1].split(" ")[3]) });
+    switch (lines[i][0]) {
+      case "Starting items":
+        monkey.setQueue(lines[i][1].split(",").map((item) => parseInt(item)));
+        break;
+      case "Operation":
+        monkey.setOperands(
+          lines[i][1].split(" = ").map((item) => item.trim())[1]
+        );
+        break;
+      case "Test":
+        monkey.setDivider(parseInt(lines[i][1].split(" ")[2]));
+        break;
+      case "If true":
+        monkey.setOptions({ true: parseInt(lines[i][1].split(" ")[3]) });
+        break;
+      case "If false":
+        monkey.setOptions({ false: parseInt(lines[i][1].split(" ")[3]) });
     }
   }
   return monkey;
