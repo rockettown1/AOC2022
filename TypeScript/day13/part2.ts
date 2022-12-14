@@ -23,7 +23,11 @@ export default function part2(input: string) {
   return key1 * key2;
 }
 
-export function compare(left: any, right: any, results: any) {
+export function compare(
+  left: number | number[],
+  right: number | number[],
+  results: boolean[]
+) {
   let initialResults = results.length;
   const leftIsNumber = typeof left === "number";
   const rightIsNumber = typeof right === "number";
@@ -60,7 +64,7 @@ export function compare(left: any, right: any, results: any) {
   } else {
     if (leftIsNumber) {
       compare([left], right, results);
-    } else {
+    } else if (rightIsNumber) {
       compare(left, [right], results);
     }
   }

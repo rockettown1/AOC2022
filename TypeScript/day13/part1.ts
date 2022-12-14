@@ -16,7 +16,11 @@ export default function part1(input: string) {
   return sumIndices(results);
 }
 
-export function compare(left: any, right: any, results: any) {
+export function compare(
+  left: number | number[],
+  right: number | number[],
+  results: boolean[]
+) {
   let initialResults = results.length;
   const leftIsNumber = typeof left === "number";
   const rightIsNumber = typeof right === "number";
@@ -53,7 +57,7 @@ export function compare(left: any, right: any, results: any) {
   } else {
     if (leftIsNumber) {
       compare([left], right, results);
-    } else {
+    } else if (rightIsNumber) {
       compare(left, [right], results);
     }
   }
